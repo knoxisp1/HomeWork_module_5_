@@ -27,47 +27,47 @@ class House:
         self.number_of_floors = number_of_floors
 
     def __len__(self):
-        return self.number_of_floors
+        return self.number_of_floors #Возращаем количество этажей здания(self.number_of_floors)
 
     def __str__(self):
-        return f'Название:{self.name},количество этажей:{self.number_of_floors}'
+        return f'Название:{self.name},количество этажей:{self.number_of_floors}' #должен возвращать строку: "Название: <название>, кол-во этажей: <этажи>".
 
-    def __eq__(self, other: object) -> object:
-        if isinstance(other.number_of_floors, int) and (other, House):
+    def __eq__(self, other): #__eq__(self, other) — определяет поведение оператора «равенства», ==.
+        if isinstance(other.number_of_floors, int) and (other, House):# Указываем на number_of_floor тип int, указаывает на обьект типа House
             return self.number_of_floors == other.number_of_floors
 
-    def __lt__(self, other):
-        if isinstance(other.number_of_floors, int) and (other, House):
+    def __lt__(self, other): #__lt__(self, other) — определяет поведение оператора сравнения «меньше», <.
+        if isinstance(other.number_of_floors, int) and (other, House): # Указываем на number_of_floor тип int, указаывает на обьект типа House
             return self.number_of_floors < other.number_of_floors
 
-    def __le__(self, other):
-        if isinstance(other.number_of_floors, int) and (other, House):
+    def __le__(self, other): #__le__(self, other) — определяет поведение оператора сравнения «меньше или равно», <=.
+        if isinstance(other.number_of_floors, int) and (other, House):# Указываем на number_of_floor тип int, указаывает на обьект типа House
             return self.number_of_floors <= other.number_of_floors
 
-    def __gt__(self, other):
-        if isinstance(other.number_of_floors, int) and (other, House):
+    def __gt__(self, other):#__gt__(self, other) — определяет поведение оператора сравнения «больше», >.
+        if isinstance(other.number_of_floors, int) and (other, House):# Указываем на number_of_floor тип int, указаывает на обьект типа House
             return self.number_of_floors > other.number_of_floors
 
-    def __ge__(self, other):
-        if isinstance(other.number_of_floors, int) and (other, House):
+    def __ge__(self, other):#__ge__(self, other) — определяет поведение оператора сравнения «больше или равно», >=.
+        if isinstance(other.number_of_floors, int) and (other, House):# Указываем на number_of_floor тип int, указаывает на обьект типа House
             return self.number_of_floors >= other.number_of_floors
 
-    def __ne__(self, other):
-        if isinstance(other.number_of_floors, int) and (other, House):
+    def __ne__(self, other):#__ne__(self, other) — определяет поведение оператора «неравенства», !=.
+        if isinstance(other.number_of_floors, int) and (other, House):# Указываем на number_of_floor тип int, указаывает на обьект типа House
             return self.number_of_floors != other.number_of_floors
 
-    def __add__(self, vallue):
-        if isinstance(vallue, int):
-            self.number_of_floors = self.number_of_floors + vallue
-            return self
+    def __add__(self, vallue):#сложение, оператор +
+        if isinstance(vallue, int): #Проверяем являеться ли тип (vallue,int(integer))-целочисленное число
+            self.number_of_floors = self.number_of_floors + vallue #Cкладываем self.number_of_floor c vallue
+            return self #Возращаем self
 
-    def __iadd__(self, vallue):
-        if isinstance(vallue, int):
-            self.number_of_floors += vallue
-            return self
+    def __iadd__(self, vallue): # __iadd__(self, other) — сложение с присваиванием, оператор +=
+        if isinstance(vallue, int):##Проверяем являеться ли тип (vallue,int(integer))-целочисленное число
+            self.number_of_floors += vallue #Складываем или присваиваем self.number_of_floors c vallue
+            return self #Возращаем self
 
-    def __radd__(self, vallue):
-        return self.__add__(vallue)
+    def __radd__(self, vallue): #__radd__(self, other) — сложение, оператор +
+        return self.__add__(vallue) #Возращаем результат вызова
 
 
 h1 = House('ЖК Эльбрус', 10)
